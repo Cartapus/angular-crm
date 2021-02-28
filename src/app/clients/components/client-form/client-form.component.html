@@ -1,0 +1,36 @@
+<form (ngSubmit)="register()" [formGroup]="myForm">
+
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input formControlName="name" type="text" id="name" placeholder="Nom du client" class="form-control">
+    <div class="alert-danger" *ngIf="name.hasError('required') && name.touched">
+      Champ nom obligatoire
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input formControlName="email" type="text" id="email" placeholder="Email du client" class="form-control">
+    <div class="alert-danger" *ngIf="email.hasError('email')">
+      Format email invalide
+    </div>
+    <div class="alert-danger" *ngIf="email.hasError('required') && email.touched">
+      Champ email obligatoire
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="name">Comment</label>
+    <input formControlName="comment" type="text" id="comment" placeholder="Commentaire du client" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label for="name">State</label>
+    <select formControlName="state" id="state" class="form-select">
+      <option [value]="state" *ngFor="let state of ClientStateVal">{{state}}</option>
+      </select>
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Enregistrer</button>
+
+</form>

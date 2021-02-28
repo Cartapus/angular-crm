@@ -1,0 +1,20 @@
+<app-bandeau
+  headerTitle="Orders"
+  headerSubTitle="Liste des ordres"
+></app-bandeau>
+
+<app-button
+  buttonTitle="Add an order"
+  (btnClick)="goToAdd()"
+></app-button>
+
+<app-tableau [headersTable]="headersOrders">
+  <tr *ngFor="let order of orders">
+    <td>{{order.type}}</td>
+    <td>{{order.clientId}}</td>
+    <td>{{order.duration}} jours</td>
+    <!-- <td>{{ order | total | currency : "EUR" }}</td> -->
+    <!-- <td>{{ order | total:"ttc" | currency : "EUR" }}</td> -->
+    <td appColor [item]="order.state">{{order.state}}
+  </tr>
+</app-tableau>

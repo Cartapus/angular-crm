@@ -1,0 +1,27 @@
+<app-bandeau headerTitle="Login" headerSubTitle="Page de login"></app-bandeau>
+
+<div>
+  <button class="btn btn-danger" (click)="dec()">-</button>
+
+  <button class="btn btn-success" (click)="inc()">+</button>
+</div>
+
+<div>
+  <button class="btn btn-primary" (click)="toggle()">Menu</button>
+</div>
+
+<form (ngSubmit)="register()" #myForm="ngForm">
+
+  <div class="form-group">
+    <label for="username">Nom d'utilisateur</label>
+    <input required type="text" id="username" placeholder="Nom utilisateur" class="form-control" name="username" [(ngModel)]="user.username">
+  </div>
+
+  <div class="form-group">
+    <label for="password">Mot de passe</label>
+    <input required type="password" id="password" class="form-control" name="password" [(ngModel)]="user.password">
+  </div>
+
+  <button type="submit" [disabled]="myForm.invalid">Enregistrer</button>
+
+</form>

@@ -1,0 +1,11 @@
+<div>
+  <p>Voulez-vous vraiment supprimer ce client ?</p>
+</div>
+<div>
+  <button class="btn btn-outline-success" (click)="deleteClient(client)">
+    Oui
+  </button>
+  <a [routerLink]="['/clients', 'list']">
+    <button class="btn btn-outline-danger">Non</button>
+  </a>
+</div>

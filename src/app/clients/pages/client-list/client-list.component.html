@@ -1,0 +1,32 @@
+<app-bandeau
+  headerTitle="Clients"
+  headerSubTitle="Liste des clients"
+></app-bandeau>
+
+<app-button
+  buttonTitle="Add a client"
+  (btnClick)="goToAdd()"
+></app-button>
+
+<app-tableau [headersTable]="headersClients">
+  <tr *ngFor="let client of clients">
+    <td>{{ client.name }}</td>
+    <td>{{ client.email }}</td>
+    <td appColor
+      [item]="client.state">
+      <select [(ngModel)]="client.state" id="state" class="form-select" (ngModelChange)="updateState(client)">
+        <option [value]="state" *ngFor="let state of ClientStateVal">{{state}}</option>
+        </select>
+    </td>
+    <td>{{ client.comment }}</td>
+    <td>
+      <a [routerLink]="['/clients', 'edit', client.id]">Edit</a>
+      <a [routerLink]="['/clients', 'delete', client.id]">
+        <fa-icon [icon]="faTrash"></fa-icon>
+      </a>
+
+    </td>
+  </tr>
+</app-tableau>
+
+<router-outlet></router-outlet>

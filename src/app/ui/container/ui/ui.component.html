@@ -1,0 +1,20 @@
+<header class="fixed-top">
+  <button class="btn btn-primary" (click)="toggle()" >Menu {{open}} </button>
+  <app-header></app-header>
+</header>
+​
+<main [ngClass]="{'close-aside': !open}">
+  <div class="shadow position-fixed" (click)="toggle()"></div>
+  <aside>
+    <div class="scroller"></div>
+    <app-nav></app-nav>
+  </aside>
+  <div class="page">
+    <div class="contents">
+      <router-outlet></router-outlet>
+    </div>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+  </div>
+</main>

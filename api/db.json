@@ -1,0 +1,44 @@
+{
+  "clients": [
+    {
+      "name": "Accenture",
+      "email": "contact@accenture.com",
+      "comment": "super client",
+      "state": "Actif",
+      "id": 1
+    },
+    {
+      "name": "Capgemini",
+      "email": "contact@capgemini.com",
+      "comment": "super client cap",
+      "state": "Actif",
+      "id": 2
+    },
+    {
+      "name": "Atos",
+      "email": "contact@atos.net",
+      "comment": "client personnel",
+      "state": "Inactif",
+      "id": 3
+    },
+    {
+      "name": "Tesla",
+      "email": "tesla@atos.net",
+      "comment": "mis à jour",
+      "state": "Inactif",
+      "id": 4
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "clientId": 2,
+      "duration": 6,
+      "tva": 20,
+      "tjmHt": 100,
+      "comment": "super commande",
+      "type": "Formation",
+      "state": "Option"
+    }
+  ]
+}

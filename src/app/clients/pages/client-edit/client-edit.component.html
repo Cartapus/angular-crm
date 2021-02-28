@@ -1,0 +1,5 @@
+<app-client-form
+  *ngIf="client"
+  [clientInitial]="client"
+  (submitted)="editClient($event)"
+></app-client-form>

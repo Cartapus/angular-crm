@@ -1,0 +1,17 @@
+@import 'theme';
+
+div{
+  padding: 2.0rem;
+}
+
+:host-context(app-client-list) div{
+  background-color: $color1;
+}
+
+:host-context(app-order-list) div{
+  background-color: $color2;
+}
+
+:host-context(app-login) div{
+  background-color: $color-success;
+}
